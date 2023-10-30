@@ -52,10 +52,11 @@ public class Inicio extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(escudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 140, 70));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Contraseña:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
+        ingreso.setBackground(new java.awt.Color(0, 0, 0));
+        ingreso.setForeground(new java.awt.Color(255, 255, 255));
         ingreso.setText("Entrar");
         ingreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +65,6 @@ public class Inicio extends javax.swing.JFrame {
         });
         jPanel2.add(ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Usuario:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
@@ -90,8 +90,7 @@ public class Inicio extends javax.swing.JFrame {
         titulo1.setText("Interact");
         jPanel2.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
 
-        margen1.setForeground(new java.awt.Color(0, 0, 0));
-        margen1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        margen1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jPanel2.add(margen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 310, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
