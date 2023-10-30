@@ -37,9 +37,9 @@ public class VPrincipal extends javax.swing.JFrame {
         titulo1 = new javax.swing.JLabel();
         Salir = new javax.swing.JButton();
         Agendar = new javax.swing.JButton();
+        Historial1 = new javax.swing.JButton();
         Configuracion = new javax.swing.JButton();
         agendar = new javax.swing.JLabel();
-        Historial1 = new javax.swing.JButton();
 
         jToggleButton2.setText("jToggleButton1");
 
@@ -61,7 +61,9 @@ public class VPrincipal extends javax.swing.JFrame {
         titulo1.setText("Interact");
         jPanel2.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
 
+        Salir.setBackground(new java.awt.Color(0, 204, 54));
         Salir.setText("Salir");
+        Salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255)));
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirActionPerformed(evt);
@@ -69,7 +71,9 @@ public class VPrincipal extends javax.swing.JFrame {
         });
         jPanel2.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 310, 80));
 
+        Agendar.setBackground(new java.awt.Color(0, 204, 54));
         Agendar.setText("Agendar");
+        Agendar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255)));
         Agendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgendarActionPerformed(evt);
@@ -77,15 +81,18 @@ public class VPrincipal extends javax.swing.JFrame {
         });
         jPanel2.add(Agendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 310, 80));
 
+        Historial1.setBackground(new java.awt.Color(0, 204, 54));
+        Historial1.setText("Historial");
+        Historial1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255)));
+        jPanel2.add(Historial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 310, 80));
+
+        Configuracion.setBackground(new java.awt.Color(0, 204, 54));
         Configuracion.setText("Configuracion");
+        Configuracion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0), new java.awt.Color(255, 255, 255)));
         jPanel2.add(Configuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 310, 80));
 
-        agendar.setForeground(new java.awt.Color(0, 0, 0));
         agendar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(agendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 330, 340));
-
-        Historial1.setText("Historial");
-        jPanel2.add(Historial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 310, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,4 +167,5 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;
     // End of variables declaration//GEN-END:variables
+    
 }
