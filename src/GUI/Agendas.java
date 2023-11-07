@@ -48,10 +48,14 @@ public class Agendas extends javax.swing.JFrame {
         selRol = new javax.swing.JComboBox<>();
         labelSelLevelEng = new javax.swing.JLabel();
         selLevelEng = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaAsesorias = new javax.swing.JTable();
+        viewMap1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setMinimumSize(new java.awt.Dimension(900, 700));
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 700));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,14 +99,14 @@ public class Agendas extends javax.swing.JFrame {
         labelRol.setText("Rol:");
         jPanel2.add(labelRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
-        selcDate.setBackground(new java.awt.Color(204, 204, 204));
+        selcDate.setBackground(new java.awt.Color(255, 255, 255));
         selcDate.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(selcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 240, -1));
 
         labelSelFecha.setText("Selecciona la fecha: ");
         jPanel2.add(labelSelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
 
-        selHora.setBackground(new java.awt.Color(204, 204, 204));
+        selHora.setBackground(new java.awt.Color(255, 255, 255));
         selHora.setForeground(new java.awt.Color(0, 0, 0));
         selHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM" }));
         selHora.addActionListener(new java.awt.event.ActionListener() {
@@ -120,12 +124,12 @@ public class Agendas extends javax.swing.JFrame {
                 viewMapActionPerformed(evt);
             }
         });
-        jPanel2.add(viewMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, -1, -1));
+        jPanel2.add(viewMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, -1, -1));
 
         labelSelHora.setText("Selecciona la Hora : ");
         jPanel2.add(labelSelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
 
-        selPlace.setBackground(new java.awt.Color(204, 204, 204));
+        selPlace.setBackground(new java.awt.Color(255, 255, 255));
         selPlace.setForeground(new java.awt.Color(0, 0, 0));
         selPlace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "BLOQUE ADMINISTRATIVO", "ZONA DE ESTUDIOS LOS NARANJOS", "ZONA DE ESTUDIOS LOS ALMENDROS", "BLOQUE P40", "PORTERIA METRO", " " }));
         selPlace.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +142,7 @@ public class Agendas extends javax.swing.JFrame {
         labelSelePlace.setText("Selecciona lugar de encuentro: ");
         jPanel2.add(labelSelePlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
-        selRol.setBackground(new java.awt.Color(204, 204, 204));
+        selRol.setBackground(new java.awt.Color(255, 255, 255));
         selRol.setForeground(new java.awt.Color(0, 0, 0));
         selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asesor", "Aprendiz" }));
         jPanel2.add(selRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, -1));
@@ -146,7 +150,7 @@ public class Agendas extends javax.swing.JFrame {
         labelSelLevelEng.setText("Nivel Ingles: ");
         jPanel2.add(labelSelLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
 
-        selLevelEng.setBackground(new java.awt.Color(204, 204, 204));
+        selLevelEng.setBackground(new java.awt.Color(255, 255, 255));
         selLevelEng.setForeground(new java.awt.Color(0, 0, 0));
         selLevelEng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles 1", "Ingles 2", "Ingles 3", " ", " " }));
         selLevelEng.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +159,41 @@ public class Agendas extends javax.swing.JFrame {
             }
         });
         jPanel2.add(selLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, -1));
+
+        tablaAsesorias.setBackground(new java.awt.Color(102, 102, 102));
+        tablaAsesorias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tablaAsesorias.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Fecha", "Hora", "Lugar", "Nivel", "Tema"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tablaAsesorias);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 590, 180));
+
+        viewMap1.setBackground(new java.awt.Color(204, 204, 204));
+        viewMap1.setForeground(new java.awt.Color(0, 0, 0));
+        viewMap1.setText("Reservar");
+        viewMap1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewMap1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,6 +230,10 @@ public class Agendas extends javax.swing.JFrame {
     private void selLevelEngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selLevelEngActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selLevelEngActionPerformed
+
+    private void viewMap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMap1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewMap1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,6 +277,7 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JButton Salir;
     private javax.swing.JLabel escudo0;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelRol;
     private javax.swing.JLabel labelSelFecha;
     private javax.swing.JLabel labelSelHora;
@@ -245,8 +289,10 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> selPlace;
     private javax.swing.JComboBox<String> selRol;
     private com.toedter.calendar.JDateChooser selcDate;
+    private javax.swing.JTable tablaAsesorias;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;
     private javax.swing.JButton viewMap;
+    private javax.swing.JButton viewMap1;
     // End of variables declaration//GEN-END:variables
 }
