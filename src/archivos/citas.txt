@@ -1,0 +1,15 @@
+0, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+1, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+2, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+3, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+4, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+5, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+6, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+7, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+8, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+9, fecha, 9 am, algunLugar, 2, aprendiz, todo o nada, false
+10, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+11, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+12, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+13, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+14, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false

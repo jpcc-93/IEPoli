@@ -15,15 +15,44 @@ public class Usuario {
     private String mail;
     private String numbrePhone;
     private boolean admin;
+    private String user;
+    private String pw;
 
-    public Usuario(String name, String lastName, String id, String mail, String numbrePhone, boolean admin) {
+    public Usuario(String name, String lastName, String id, String mail, String numbrePhone, boolean admin, String user, String pw) {
         this.name = name;
         this.lastName = lastName;
         this.id = id;
         this.mail = mail;
         this.numbrePhone = numbrePhone;
         this.admin = admin;
+        this.user = user;
+        this.pw = pw;
     }
+
+    public Usuario() {
+    }
+    
+    
+
+
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPw() {
+        return pw;
+    }
+
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
+    
+    
 
     public String getName() {
         return name;

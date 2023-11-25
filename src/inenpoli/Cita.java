@@ -37,11 +37,39 @@ public class Cita {
         this.asesor = asesor;
         this.participantes = participantes;
     }
+
+    public Cita() {
+    }
+    
+    
+    public void asignarData(String[] datos){
+        this.setNumCita(Integer.parseInt(datos[0])); 
+        this.setDate(datos[1]);
+        this.setHour(datos[2]);
+        this.setPlace(datos[3]);
+        this.setLevelE(datos[4]);
+        this.setRol(datos[5]);
+        this.setObservaciones(datos[6]);
+        this.setAsesor(Boolean.parseBoolean(datos[7]));
+    }
+    
+    
+    public void mostrarXconsola(){
+        System.out.println("numero cita: " + getNumCita() );
+        System.out.println("fecha: " + getDate() );
+        System.out.println("hora: " + getHour() );
+        System.out.println("lugar: " + getPlace() );
+        System.out.println("nivel: " + getLevelE() );
+        System.out.println("Rol: " + getRol() );
+        System.out.println("observaciones: " + getObservaciones() );
+        System.out.println("Asesor: " + String.valueOf(isAsesor()) );
+    }
     
     
     public Cita[] cargarAlista(){
         int tamaño = 0;
-        String rutaArchivo = "citas.txt";
+        String rutaArchivo = "C:\\Users\\jpcc-\\OneDrive\\Documentos\\NetBeansProjects\\IEPoli\\src\\archivos\\citas.txt";
+        String datos[] = new String[8];
         
         try {
             // Abrir el archivo para lectura
@@ -51,8 +79,33 @@ public class Cita {
             // Leer el archivo línea por línea
             String linea;
             while ((linea = bufferedReader.readLine()) != null) {
-                System.out.println(linea);
-                // Aquí puedes procesar la línea según tus necesidades
+                tamaño ++;
+                
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println(tamaño);
+        Cita[] citas = new Cita[tamaño];
+        tamaño = 0;
+        
+         try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                Cita nueva = new Cita();
+                datos = linea.split(",");
+                nueva.asignarData(datos);
+                citas[tamaño] = nueva;
+                tamaño ++;
             }
 
             // Cerrar el BufferedReader
@@ -62,7 +115,7 @@ public class Cita {
         }
         
         
-        Cita[] citas = new Cita[tamaño];
+        
         return citas;
     }
     

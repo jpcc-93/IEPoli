@@ -4,7 +4,9 @@
  */
 package GUI;
 
+import inenpoli.Cita;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,10 +17,19 @@ public class Agendas extends javax.swing.JFrame {
     /**
      * Creates new form Agendas
      */
+    
+    DefaultTableModel model;
     public Agendas() {
         initComponents();
         Inicio escudo = new Inicio();
         //escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        model = new DefaultTableModel();
+        model.addColumn("Numero Agenda");
+        model.addColumn("Fecha ");
+        model.addColumn("Hora");
+        model.addColumn("Lugar");
+        this.tablaAsesorias.setModel(model);
+        
     }
 
     /**
@@ -79,6 +90,7 @@ public class Agendas extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
+        verTodasAgend = new javax.swing.JButton();
 
         Salir.setBackground(new java.awt.Color(0, 204, 54));
         Salir.setText("Salir");
@@ -359,7 +371,7 @@ public class Agendas extends javax.swing.JFrame {
                 viewMap1ActionPerformed(evt);
             }
         });
-        jPanel1.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        jPanel1.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
         labelSTema.setText("Tema:");
         jPanel1.add(labelSTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
@@ -387,63 +399,6 @@ public class Agendas extends javax.swing.JFrame {
 
         tablaAsesorias.setBackground(new java.awt.Color(102, 102, 102));
         tablaAsesorias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tablaAsesorias.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Fecha", "Hora", "Lugar", "Nivel", "Tema"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         tablaAsesorias.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane2.setViewportView(tablaAsesorias);
 
@@ -465,6 +420,13 @@ public class Agendas extends javax.swing.JFrame {
 
         jLabel3.setText("Buscar por fecha:");
 
+        verTodasAgend.setText("Ver Todas");
+        verTodasAgend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verTodasAgendActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -477,7 +439,9 @@ public class Agendas extends javax.swing.JFrame {
                         .addGap(408, 408, 408))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(verTodasAgend)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,15 +454,15 @@ public class Agendas extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                .addGap(28, 28, 28)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton5)
                         .addComponent(jButton6)
                         .addComponent(jButton7)
-                        .addComponent(jLabel3))
+                        .addComponent(jLabel3)
+                        .addComponent(verTodasAgend))
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
@@ -559,6 +523,11 @@ public class Agendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void verTodasAgendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTodasAgendActionPerformed
+        // TODO add your handling code here:
+        this.llenartabla();
+    }//GEN-LAST:event_verTodasAgendActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -590,8 +559,29 @@ public class Agendas extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Agendas().setVisible(true);
+                Agendas prueba = new Agendas();
+                prueba.llenartabla();
+                
             }
         });
+    }
+    
+    
+    public void llenartabla(){
+        Cita citas = new Cita();
+        Cita vecCitas[];
+        vecCitas = citas.cargarAlista();
+        String carga[] = new String[4];
+
+        
+        for (int i = 0 ; i < vecCitas.length;i++){
+            carga[0] = String.valueOf(vecCitas[i].getNumCita());
+            carga[1] = vecCitas[i].getDate();
+            carga[2] = vecCitas[i].getHour();
+            carga[3] = vecCitas[i].getPlace();
+            model.addRow(carga);
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -640,6 +630,7 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JPanel titulo;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;
+    private javax.swing.JButton verTodasAgend;
     private javax.swing.JButton viewMap;
     private javax.swing.JButton viewMap1;
     private javax.swing.JPanel viewUsurio;
