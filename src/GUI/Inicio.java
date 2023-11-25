@@ -4,10 +4,13 @@
  */
 package GUI;
 
+import inenpoli.Usuario;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,8 +21,13 @@ public class Inicio extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+    Usuario[] loguinlist;
+    
+    public Inicio(){}
+    
+    public Inicio(Usuario[] loguin) {
         initComponents();
+        this.loguinlist = loguin;
         ajustarImag(escudo,"src/imagenes/escudo poli - copia.png");
     }
 
@@ -37,7 +45,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         ingreso = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        textPw = new javax.swing.JPasswordField();
         texUsuario = new javax.swing.JTextPane();
         textErrorLog = new javax.swing.JLabel();
         panelEditFondo1 = new javax.swing.JPanel();
@@ -51,8 +59,6 @@ public class Inicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InteractEnglishPoli");
         setBackground(new java.awt.Color(153, 153, 153));
-        setMaximumSize(new java.awt.Dimension(660, 280));
-        setPreferredSize(new java.awt.Dimension(660, 280));
         setResizable(false);
         setSize(new java.awt.Dimension(660, 280));
 
@@ -80,18 +86,17 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel2.setText("Usuario:");
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPasswordField1.setMinimumSize(new java.awt.Dimension(64, 30));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        textPw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textPw.setMinimumSize(new java.awt.Dimension(64, 30));
+        textPw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                textPwActionPerformed(evt);
             }
         });
 
         texUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        textErrorLog.setForeground(new java.awt.Color(255, 51, 51));
+        textErrorLog.setForeground(new java.awt.Color(255, 255, 255));
         textErrorLog.setText("Usuario No existe");
 
         javax.swing.GroupLayout loguinLayout = new javax.swing.GroupLayout(loguin);
@@ -102,7 +107,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(loguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(textErrorLog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textPw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(texUsuario, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ingreso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, loguinLayout.createSequentialGroup()
@@ -122,7 +127,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ingreso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,16 +199,47 @@ public class Inicio extends javax.swing.JFrame {
 
     private void ingresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoActionPerformed
         // TODO add your handling code here:
-        Agendas agendas = new Agendas();
-        agendas.setLocationRelativeTo(null);
-        this.dispose();
-        agendas.setVisible(true);
+        boolean acceso = false;
+        String mensaje = "Error datos"; 
+        Usuario usuarioUso = new Usuario();
+ 
+        //mensaje.setText("Usuario invalido");
+        //mensaje.setForeground(Color.red);
+        for(int i = 0; i < loguinlist.length; i++){
+            System.out.println("user vector: "+loguinlist[i].getUser());
+            System.out.println(texUsuario.getText());
+            if(loguinlist[i].getUser().equalsIgnoreCase(texUsuario.getText())){
+                
+                if(loguinlist[i].getPw().equals(new String(textPw.getPassword()))){
+                    System.out.print("pasa pw");
+                    acceso = true;
+                    usuarioUso = loguinlist[i];
+                }else{
+                    mensaje = "Clave invalida";
+                    //mensaje.setForeground(Color.red);
+                }
+            }else{
+                
+            }
+        }
+        if(acceso){
+            Agendas agendas = new Agendas(usuarioUso);
+            agendas.setLocationRelativeTo(null);
+            this.dispose();
+            agendas.setVisible(true);
+        }else{
+            textErrorLog.setText(mensaje);
+            textErrorLog.setForeground(Color.red);
+            textPw.setText("");
+        }
+      
+       
         
     }//GEN-LAST:event_ingresoActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void textPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPwActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_textPwActionPerformed
     
 //private void ajustarImag(JLabel labelEtiqueta, String rutaIm) {
 //    ImageIcon imagenOriginal = new ImageIcon(rutaIm);
@@ -267,7 +303,7 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                //new Inicio().setVisible(true);
             }
         });
     }
@@ -278,13 +314,13 @@ public class Inicio extends javax.swing.JFrame {
     javax.swing.JButton ingreso;
     javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel2;
-    javax.swing.JPasswordField jPasswordField1;
     javax.swing.JPanel loguin;
     javax.swing.JPanel panelEditFondo1;
     javax.swing.JPanel panelEditFondo2;
     javax.swing.JPanel panelFondo;
     javax.swing.JTextPane texUsuario;
     javax.swing.JLabel textErrorLog;
+    javax.swing.JPasswordField textPw;
     javax.swing.JPanel titulo;
     javax.swing.JLabel titulo1;
     javax.swing.JLabel titulo2;

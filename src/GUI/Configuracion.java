@@ -15,8 +15,8 @@ public class Configuracion extends javax.swing.JFrame {
      */
     public Configuracion() {
         initComponents();
-        Inicio escudo = new Inicio();
-        escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        //Inicio escudo = new Inicio();
+        //escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
     }
 
     /**

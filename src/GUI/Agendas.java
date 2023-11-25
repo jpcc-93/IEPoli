@@ -5,6 +5,7 @@
 package GUI;
 
 import inenpoli.Cita;
+import inenpoli.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,12 +18,17 @@ public class Agendas extends javax.swing.JFrame {
     /**
      * Creates new form Agendas
      */
+    Usuario usuarioUso;
     
     DefaultTableModel model;
-    public Agendas() {
+    public Agendas(Usuario usuario) {
         initComponents();
-        Inicio escudo = new Inicio();
+        usuarioUso = new Usuario();
+        usuarioUso = usuario;
+        //Inicio escudo = new Inicio();
         //escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        textNombreBanner.setText(usuario.getName());
+        textLastNameBanner.setText(usuarioUso.getLastName());
         model = new DefaultTableModel();
         model.addColumn("Numero Agenda");
         model.addColumn("Fecha ");
@@ -54,7 +60,8 @@ public class Agendas extends javax.swing.JFrame {
         titulo1 = new javax.swing.JLabel();
         viewUsurio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        textNombreBanner = new javax.swing.JLabel();
+        textLastNameBanner = new javax.swing.JLabel();
         botones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -201,10 +208,12 @@ public class Agendas extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Usuario #001");
-        jLabel2.setMaximumSize(new java.awt.Dimension(68, 25));
-        jLabel2.setMinimumSize(new java.awt.Dimension(68, 25));
+        textNombreBanner.setForeground(new java.awt.Color(0, 0, 0));
+        textNombreBanner.setText("Usuario #001");
+        textNombreBanner.setMaximumSize(new java.awt.Dimension(68, 25));
+        textNombreBanner.setMinimumSize(new java.awt.Dimension(68, 25));
+
+        textLastNameBanner.setText("jLabel2");
 
         javax.swing.GroupLayout viewUsurioLayout = new javax.swing.GroupLayout(viewUsurio);
         viewUsurio.setLayout(viewUsurioLayout);
@@ -214,16 +223,21 @@ public class Agendas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textLastNameBanner))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         viewUsurioLayout.setVerticalGroup(
             viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewUsurioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(viewUsurioLayout.createSequentialGroup()
+                        .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textLastNameBanner)))
                 .addGap(50, 50, 50))
         );
 
@@ -558,9 +572,9 @@ public class Agendas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agendas().setVisible(true);
-                Agendas prueba = new Agendas();
-                prueba.llenartabla();
+                //new Agendas().setVisible(true);
+                
+                
                 
             }
         });
@@ -601,7 +615,6 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -627,6 +640,8 @@ public class Agendas extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser selcDate;
     private javax.swing.JPanel seleccion;
     private javax.swing.JTable tablaAsesorias;
+    private javax.swing.JLabel textLastNameBanner;
+    private javax.swing.JLabel textNombreBanner;
     private javax.swing.JPanel titulo;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;

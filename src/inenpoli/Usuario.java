@@ -4,6 +4,10 @@
  */
 package inenpoli;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *
  * @author jpcc-
@@ -13,7 +17,7 @@ public class Usuario {
     private String lastName;
     private String id;
     private String mail;
-    private String numbrePhone;
+    private String numberPhone;
     private boolean admin;
     private String user;
     private String pw;
@@ -23,7 +27,7 @@ public class Usuario {
         this.lastName = lastName;
         this.id = id;
         this.mail = mail;
-        this.numbrePhone = numbrePhone;
+        this.numberPhone = numbrePhone;
         this.admin = admin;
         this.user = user;
         this.pw = pw;
@@ -33,6 +37,134 @@ public class Usuario {
     }
     
     
+    public void mostrarXconsola(){
+        System.out.println("ID: " + getId());
+        System.out.println("Nombre: " + getName() );
+        System.out.println("Apellido: " + getLastName() );
+        System.out.println("mail: " + getMail() );
+        System.out.println("numero Tel: " + getNumberPhone() );
+        System.out.println("Admin: " + String.valueOf(isAdmin()) );
+        System.out.println("User: " + getUser() );
+        System.out.println("PW: " + getPw());
+    }
+    
+    public void asignarData(String[] datos){
+        this.setId(datos[0]); 
+        this.setName(datos[1]);
+        this.setLastName(datos[2]);
+        this.setMail(datos[3]);
+        this.setNumberPhone(datos[4]);
+        this.setAdmin(Boolean.parseBoolean(datos[5]));
+        this.setUser(datos[6]);
+        this.setPw(datos[7]);
+    }
+    
+    
+    public Usuario[] cargarAlista(){
+        int tamaño = 0;
+        String rutaArchivo = "src/archivos/users.txt";
+        String datos[] = new String[8];
+        
+        try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                tamaño ++;
+                
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println(tamaño);
+        Usuario[] user = new Usuario[tamaño];
+        tamaño = 0;
+        
+         try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                Usuario nuevo = new Usuario();
+                datos = linea.split(",");
+                nuevo.asignarData(datos);
+                user[tamaño] = nuevo;
+                tamaño ++;
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+        return user;
+    }
+    
+    public Usuario[] cargarAlistaDeLoguin(){
+        int tamaño = 0;
+        String rutaArchivo = "src/archivos/users.txt";
+        String datos[] = new String[8];
+        
+        try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                tamaño ++;
+                
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println(tamaño);
+        Usuario[] user = new Usuario[tamaño];
+        tamaño = 0;
+        
+         try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                Usuario nuevo = new Usuario();
+                datos = linea.split(",");
+                nuevo.asignarData(datos);
+                user[tamaño] = nuevo;
+                tamaño ++;
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+        return user;
+    }
 
 
 
@@ -86,12 +218,12 @@ public class Usuario {
         this.mail = mail;
     }
 
-    public String getNumbrePhone() {
-        return numbrePhone;
+    public String getNumberPhone() {
+        return numberPhone;
     }
 
-    public void setNumbrePhone(String numbrePhone) {
-        this.numbrePhone = numbrePhone;
+    public void setNumberPhone(String numberPhone) {
+        this.numberPhone = numberPhone;
     }
 
     public boolean isAdmin() {

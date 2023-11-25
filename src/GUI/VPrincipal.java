@@ -17,8 +17,8 @@ public class VPrincipal extends javax.swing.JFrame {
      */
     public VPrincipal() {
         initComponents();
-        Inicio escudo = new Inicio();
-        escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        //Inicio escudo = new Inicio();
+        //escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
     }
 
     /**
@@ -114,10 +114,10 @@ public class VPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirActionPerformed
 
     private void AgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarActionPerformed
-        Agendas agenda = new Agendas();
-        agenda.setVisible(true);
-        agenda.setLocationRelativeTo(null);
-        this.dispose();
+        //Agendas agenda = new Agendas();
+        //agenda.setVisible(true);
+        //agenda.setLocationRelativeTo(null);
+        //this.dispose();
     }//GEN-LAST:event_AgendarActionPerformed
 
     /**

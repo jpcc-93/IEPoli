@@ -68,7 +68,7 @@ public class Cita {
     
     public Cita[] cargarAlista(){
         int tamaño = 0;
-        String rutaArchivo = "C:\\Users\\jpcc-\\OneDrive\\Documentos\\NetBeansProjects\\IEPoli\\src\\archivos\\citas.txt";
+        String rutaArchivo = "src/archivos/citas.txt";
         String datos[] = new String[8];
         
         try {
