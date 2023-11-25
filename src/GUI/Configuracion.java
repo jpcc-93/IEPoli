@@ -106,148 +106,78 @@ public class Configuracion extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
 
         jButton2.setText("Modificar usurio");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
 
         jButton3.setText("Eliminar usurio");
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, -1, -1));
 
-        jLayeredPane1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLayeredPane1MouseClicked(evt);
-            }
-        });
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelCorreo.setForeground(new java.awt.Color(0, 0, 0));
         labelCorreo.setText("Correo poli:");
+        jLayeredPane1.add(labelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 108, -1, 20));
 
         pasword.setForeground(new java.awt.Color(0, 0, 0));
         pasword.setText("Contraeña:");
+        jLayeredPane1.add(pasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 203, -1, -1));
 
         labelNombre.setForeground(new java.awt.Color(0, 0, 0));
         labelNombre.setText("Nombre:");
+        jLayeredPane1.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        jLayeredPane1.add(textPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 140, 120, 20));
 
         textName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textNameActionPerformed(evt);
             }
         });
+        jLayeredPane1.add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 28, 250, 20));
 
         textMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textMailActionPerformed(evt);
             }
         });
+        jLayeredPane1.add(textMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 54, 250, 20));
 
         labelLastName.setForeground(new java.awt.Color(0, 0, 0));
         labelLastName.setText("Apellidos:");
+        jLayeredPane1.add(labelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 56, -1, -1));
+        jLayeredPane1.add(textPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 108, 250, 20));
 
         labelTelefono.setForeground(new java.awt.Color(0, 0, 0));
         labelTelefono.setText("Telefono:");
+        jLayeredPane1.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 142, -1, -1));
 
         labelUser1.setForeground(new java.awt.Color(0, 0, 0));
         labelUser1.setText("Usuario:");
+        jLayeredPane1.add(labelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        jLayeredPane1.add(textUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 168, 120, 20));
+        jLayeredPane1.add(textPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 200, 120, -1));
 
         jButton4.setText("Guardar");
+        jLayeredPane1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 275, -1, -1));
 
         jLabel1.setText("Administrador:");
+        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 203, -1, -1));
 
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
             }
         });
+        jLayeredPane1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 202, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Documento :");
-
-        jLayeredPane1.setLayer(labelCorreo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(pasword, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(labelNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textPhone, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textName, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textMail, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(labelLastName, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textPhone1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(labelTelefono, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(labelUser1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textUser, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(textPw, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jRadioButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pasword)
-                    .addComponent(labelUser1)
-                    .addComponent(labelTelefono)
-                    .addComponent(labelCorreo)
-                    .addComponent(jLabel2)
-                    .addComponent(labelNombre)
-                    .addComponent(labelLastName))
-                .addGap(40, 40, 40)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textMail, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPhone1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton1))
-                    .addComponent(jButton4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelLastName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textPhone1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTelefono)
-                    .addComponent(textPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUser1)
-                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pasword)
-                        .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
-                    .addComponent(jRadioButton1))
-                .addGap(53, 53, 53)
-                .addComponent(jButton4)
-                .addGap(22, 22, 22))
-        );
+        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 83, -1, -1));
+        jLayeredPane1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 80, 96, -1));
 
         jPanel2.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 510, 320));
 
@@ -282,9 +212,11 @@ public class Configuracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void jLayeredPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPane1MouseClicked
-
-    }//GEN-LAST:event_jLayeredPane1MouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            // TODO add your handling code here:
+            jLayeredPane1.setVisible(false);
+            textMail.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

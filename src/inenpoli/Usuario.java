@@ -14,7 +14,7 @@ public class Usuario {
     private String id;
     private String mail;
     private String numbrePhone;
-    private boolean admin; 
+    private boolean admin;
 
     public Usuario(String name, String lastName, String id, String mail, String numbrePhone, boolean admin) {
         this.name = name;
