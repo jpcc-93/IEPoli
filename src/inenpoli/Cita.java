@@ -5,7 +5,9 @@
 package inenpoli;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -42,6 +44,7 @@ public class Cita {
     }
     
     
+    
     public void asignarData(String[] datos){
         this.setNumCita(Integer.parseInt(datos[0])); 
         this.setDate(datos[1]);
@@ -63,6 +66,58 @@ public class Cita {
         System.out.println("Rol: " + getRol() );
         System.out.println("observaciones: " + getObservaciones() );
         System.out.println("Asesor: " + String.valueOf(isAsesor()) );
+    }
+    
+    public int validarNumerocita(){
+        // primer parte del codigo se encarga de contar en que numero se guardara
+        //la cita, cual sera el codigo, se parte del codigo del ultimo registro guardado
+        int tamaño = 0;
+        
+        String rutaArchivo = "src/archivos/citas.txt";
+        String datos[] = new String[8];
+        
+        try {
+            // Abrir el archivo para lectura
+            FileReader fileReader = new FileReader(rutaArchivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Leer el archivo línea por línea
+            String linea;
+            while ((linea = bufferedReader.readLine()) != null) {
+                datos = linea.split(",");
+                tamaño = Integer.parseInt(datos[0]);
+            }
+
+            // Cerrar el BufferedReader
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("empezaria en: "+tamaño);
+        return tamaño+1;
+    }
+    
+    public void gurdarEnArchivo(String[] datos){
+        int numerocita = validarNumerocita();
+         String nombreArchivo = "src/archivos/citas.txt"; // Nombre de archivo predefinido
+
+        try (BufferedWriter escribir = new BufferedWriter(new FileWriter(nombreArchivo, true))) {
+            // true en FileWriter para que se abra en modo de adición (append)
+
+            // Escribir los datos en una línea con comas como separadores
+            escribir.write(numerocita+",");
+            for(int i = 1; i < datos.length; i++){
+                escribir.write(datos[i]);
+                if (i < datos.length - 1) {
+                    escribir.write(","); // Agregar coma solo si no es el último dato
+                }
+            } 
+
+            escribir.newLine(); // Nueva línea para separar las entradas
+            System.out.println("Datos guardados en el archivo: " + nombreArchivo);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     

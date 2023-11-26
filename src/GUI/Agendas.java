@@ -6,6 +6,9 @@ package GUI;
 
 import inenpoli.Cita;
 import inenpoli.Usuario;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -88,7 +91,7 @@ public class Agendas extends javax.swing.JFrame {
         selTema = new javax.swing.JComboBox<>();
         labelObserva = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        observaciones = new javax.swing.JTextArea();
+        textObservaciones = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAsesorias = new javax.swing.JTable();
@@ -309,8 +312,10 @@ public class Agendas extends javax.swing.JFrame {
         Fondo.setForeground(new java.awt.Color(255, 255, 255));
         Fondo.setLayout(new java.awt.CardLayout());
 
+        seleccion.setBackground(new java.awt.Color(255, 255, 255));
         seleccion.setLayout(new java.awt.GridLayout(2, 1));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelSelFecha.setText("Selecciona la fecha: ");
@@ -325,7 +330,7 @@ public class Agendas extends javax.swing.JFrame {
 
         selHora.setBackground(new java.awt.Color(255, 255, 255));
         selHora.setForeground(new java.awt.Color(0, 0, 0));
-        selHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM" }));
+        selHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM" }));
         selHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selHoraActionPerformed(evt);
@@ -361,7 +366,7 @@ public class Agendas extends javax.swing.JFrame {
 
         selRol.setBackground(new java.awt.Color(255, 255, 255));
         selRol.setForeground(new java.awt.Color(0, 0, 0));
-        selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asesor", "Aprendiz" }));
+        selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Asesor", "Aprendiz" }));
         jPanel1.add(selRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
         labelSelLevelEng.setText("Nivel Ingles: ");
@@ -369,7 +374,7 @@ public class Agendas extends javax.swing.JFrame {
 
         selLevelEng.setBackground(new java.awt.Color(255, 255, 255));
         selLevelEng.setForeground(new java.awt.Color(0, 0, 0));
-        selLevelEng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles 1", "Ingles 2", "Ingles 3", " ", " " }));
+        selLevelEng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Ingles 1", "Ingles 2", "Ingles 3", " ", " " }));
         selLevelEng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selLevelEngActionPerformed(evt);
@@ -392,7 +397,7 @@ public class Agendas extends javax.swing.JFrame {
 
         selTema.setBackground(new java.awt.Color(255, 255, 255));
         selTema.setForeground(new java.awt.Color(0, 0, 0));
-        selTema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5" }));
+        selTema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5" }));
         jPanel1.add(selTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 90, -1));
 
         labelObserva.setText("Observaciones:");
@@ -403,13 +408,19 @@ public class Agendas extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        observaciones.setColumns(20);
-        observaciones.setRows(5);
-        jScrollPane1.setViewportView(observaciones);
+        textObservaciones.setBackground(new java.awt.Color(204, 204, 204));
+        textObservaciones.setColumns(20);
+        textObservaciones.setRows(5);
+        jScrollPane1.setViewportView(textObservaciones);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, -1, -1));
 
         seleccion.add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
 
         tablaAsesorias.setBackground(new java.awt.Color(102, 102, 102));
         tablaAsesorias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -447,23 +458,22 @@ public class Agendas extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(408, 408, 408))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)
-                        .addComponent(verTodasAgend)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
-                        .addGap(82, 82, 82)
-                        .addComponent(jButton6)
-                        .addGap(472, 472, 472))))
+                .addComponent(jButton5)
+                .addGap(18, 18, 18)
+                .addComponent(verTodasAgend)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addGap(82, 82, 82)
+                .addComponent(jButton6)
+                .addGap(472, 472, 472))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(403, 403, 403))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,8 +537,90 @@ public class Agendas extends javax.swing.JFrame {
 
     private void viewMap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMap1ActionPerformed
         // TODO add your handling code here:
+        String[] datos = new String[8];
+        if(validarCasillas()){
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(selcDate.getDate());
+            datos[1] = fecha;
+            datos[2] = String.valueOf(selHora.getSelectedItem());
+            datos[3] = String.valueOf(selPlace.getSelectedItem());
+            datos[4] = String.valueOf(selLevelEng.getSelectedItem());
+            datos[5] = String.valueOf(selRol.getSelectedItem());
+            datos[6] = String.valueOf(textObservaciones.getText());
+            if(datos[5].equalsIgnoreCase("Asesor")){
+            datos[7] = "true";
+            }                
+            else{datos[7] = "false";}
+            Cita nueva = new Cita();
+            nueva.gurdarEnArchivo(datos);
+            limpiarCasillas();
+            
+        }
     }//GEN-LAST:event_viewMap1ActionPerformed
-
+    
+    private void limpiarCasillas(){
+        selcDate.setDate(null);
+        selHora.setSelectedIndex(0);
+        selPlace.setSelectedIndex(0);
+        selLevelEng.setSelectedIndex(0);
+        selRol.setSelectedIndex(0);
+        selTema.setSelectedIndex(0);
+        textObservaciones.setText("");
+    }
+    private boolean validarCasillas(){
+        boolean datosOk = true;
+        String mensajeFaltan = "";
+        if(selcDate.getDate() != null){
+            
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(selcDate.getDate());
+            // con esto vuelvo la fecha un LocalDate para compararla, ya que el Jdatechosser devuelve en date
+            LocalDate fecha1 = selcDate.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+            if(fecha1.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null,"Fecha no valida");
+                return datosOk = false;
+            }
+            
+        }else{
+            mensajeFaltan += "\nFecha";
+            datosOk = false;
+        }
+        if (selHora.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nHora";
+            datosOk = false;
+        }
+        if (selPlace.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nLugar";
+            datosOk = false;
+        }
+        if (selLevelEng.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nNivel de ingles";
+            datosOk = false;
+        }
+        if (selRol.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nRol";
+            datosOk = false;
+        }
+        if (selTema.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nTema";
+            datosOk = false;
+        }
+        if(!datosOk){
+            JOptionPane.showMessageDialog(null, "Faltan los datos: "+mensajeFaltan);
+        }
+        
+        return datosOk;
+    }
+            
+            
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -539,6 +631,7 @@ public class Agendas extends javax.swing.JFrame {
 
     private void verTodasAgendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTodasAgendActionPerformed
         // TODO add your handling code here:
+        this.vaciarTabla();
         this.llenartabla();
     }//GEN-LAST:event_verTodasAgendActionPerformed
 
@@ -597,6 +690,13 @@ public class Agendas extends javax.swing.JFrame {
         }
         
     }
+    
+    public void vaciarTabla() {
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agendar;
@@ -631,7 +731,6 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JLabel labelSelePlace;
     private javax.swing.JLabel margenMenu;
     private javax.swing.JPanel menu;
-    private javax.swing.JTextArea observaciones;
     private javax.swing.JComboBox<String> selHora;
     private javax.swing.JComboBox<String> selLevelEng;
     private javax.swing.JComboBox<String> selPlace;
@@ -642,6 +741,7 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JTable tablaAsesorias;
     private javax.swing.JLabel textLastNameBanner;
     private javax.swing.JLabel textNombreBanner;
+    private javax.swing.JTextArea textObservaciones;
     private javax.swing.JPanel titulo;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;

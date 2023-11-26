@@ -1,15 +1,5 @@
-0, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-1, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-2, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-3, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-4, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-5, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-6, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-7, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-8, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-9, fecha, 9 am, algunLugar, 2, aprendiz, todo o nada, false
-10, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-11, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-12, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-13, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
-14, fecha, 6 am, algunLugar, 2, aprendiz, todo o nada, false
+1,2023-11-28,8 AM,ZONA DE ESTUDIOS LOS NARANJOS,Ingles 2,Asesor,,true
+2,2023-11-30,11 AM,BLOQUE P40,Ingles 1,Aprendiz,,false
+3,2023-12-08,11 AM,BLOQUE P40,Ingles 1,Aprendiz,,false
+4,2023-12-01,11 AM,BLOQUE P40,Ingles 1,Aprendiz,,false
+5,2023-11-29,9 AM,ZONA DE ESTUDIOS LOS ALMENDROS,Ingles 3,Asesor,pruebas pruebas,true

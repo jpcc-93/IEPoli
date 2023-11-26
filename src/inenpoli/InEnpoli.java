@@ -19,6 +19,7 @@ public class InEnpoli {
         // pruebas de manejo de clases cita
         Cita citas = new Cita();
         Cita vecCitas[];
+        
         vecCitas = citas.cargarAlista();
         //prueba de manejo clases alumno
         Usuario usuarios = new Usuario();

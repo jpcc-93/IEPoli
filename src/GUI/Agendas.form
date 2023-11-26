@@ -434,6 +434,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="seleccion">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card2"/>
@@ -446,6 +451,11 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -495,23 +505,24 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="16">
-                        <StringItem index="0" value="6 AM"/>
-                        <StringItem index="1" value="7 AM"/>
-                        <StringItem index="2" value="8 AM"/>
-                        <StringItem index="3" value="9 AM"/>
-                        <StringItem index="4" value="10 AM"/>
-                        <StringItem index="5" value="11 AM"/>
-                        <StringItem index="6" value="12 PM"/>
-                        <StringItem index="7" value="1 PM"/>
-                        <StringItem index="8" value="2 PM"/>
-                        <StringItem index="9" value="3 PM"/>
-                        <StringItem index="10" value="4 PM"/>
-                        <StringItem index="11" value="5 PM"/>
-                        <StringItem index="12" value="6 PM"/>
-                        <StringItem index="13" value="7 PM"/>
-                        <StringItem index="14" value="8 PM"/>
-                        <StringItem index="15" value="9 PM"/>
+                      <StringArray count="17">
+                        <StringItem index="0" value="*"/>
+                        <StringItem index="1" value="6 AM"/>
+                        <StringItem index="2" value="7 AM"/>
+                        <StringItem index="3" value="8 AM"/>
+                        <StringItem index="4" value="9 AM"/>
+                        <StringItem index="5" value="10 AM"/>
+                        <StringItem index="6" value="11 AM"/>
+                        <StringItem index="7" value="12 PM"/>
+                        <StringItem index="8" value="1 PM"/>
+                        <StringItem index="9" value="2 PM"/>
+                        <StringItem index="10" value="3 PM"/>
+                        <StringItem index="11" value="4 PM"/>
+                        <StringItem index="12" value="5 PM"/>
+                        <StringItem index="13" value="6 PM"/>
+                        <StringItem index="14" value="7 PM"/>
+                        <StringItem index="15" value="8 PM"/>
+                        <StringItem index="16" value="9 PM"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -607,9 +618,10 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="2">
-                        <StringItem index="0" value="Asesor"/>
-                        <StringItem index="1" value="Aprendiz"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="*"/>
+                        <StringItem index="1" value="Asesor"/>
+                        <StringItem index="2" value="Aprendiz"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -641,12 +653,13 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Ingles 1"/>
-                        <StringItem index="1" value="Ingles 2"/>
-                        <StringItem index="2" value="Ingles 3"/>
-                        <StringItem index="3" value=" "/>
+                      <StringArray count="6">
+                        <StringItem index="0" value="*"/>
+                        <StringItem index="1" value="Ingles 1"/>
+                        <StringItem index="2" value="Ingles 2"/>
+                        <StringItem index="3" value="Ingles 3"/>
                         <StringItem index="4" value=" "/>
+                        <StringItem index="5" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -700,12 +713,13 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Tema 1"/>
-                        <StringItem index="1" value="Tema 2"/>
-                        <StringItem index="2" value="Tema 3"/>
-                        <StringItem index="3" value="Tema 4"/>
-                        <StringItem index="4" value="Tema 5"/>
+                      <StringArray count="6">
+                        <StringItem index="0" value="*"/>
+                        <StringItem index="1" value="Tema 1"/>
+                        <StringItem index="2" value="Tema 2"/>
+                        <StringItem index="3" value="Tema 3"/>
+                        <StringItem index="4" value="Tema 4"/>
+                        <StringItem index="5" value="Tema 5"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -754,8 +768,11 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="observaciones">
+                    <Component class="javax.swing.JTextArea" name="textObservaciones">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
                       </Properties>
@@ -765,32 +782,34 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="verTodasAgend" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="90" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="verTodasAgend" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="40" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="790" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="403" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -816,6 +835,14 @@
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
