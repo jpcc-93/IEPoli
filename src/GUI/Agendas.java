@@ -49,14 +49,7 @@ public class Agendas extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel3 = new javax.swing.JPanel();
-        Salir = new javax.swing.JButton();
-        Agendar = new javax.swing.JButton();
-        Configuracion = new javax.swing.JButton();
-        Historial1 = new javax.swing.JButton();
-        margenMenu = new javax.swing.JLabel();
         menu = new javax.swing.JPanel();
         titulo = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
@@ -69,7 +62,7 @@ public class Agendas extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         Escudo = new javax.swing.JPanel();
         Fondo = new javax.swing.JPanel();
@@ -97,71 +90,10 @@ public class Agendas extends javax.swing.JFrame {
         tablaAsesorias = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        botonBuscarFecha = new javax.swing.JButton();
+        jDatebusqueda = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         verTodasAgend = new javax.swing.JButton();
-
-        Salir.setBackground(new java.awt.Color(0, 204, 54));
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
-            }
-        });
-
-        Agendar.setBackground(new java.awt.Color(0, 204, 54));
-        Agendar.setText("Agendar");
-        Agendar.setEnabled(false);
-
-        Configuracion.setBackground(new java.awt.Color(0, 204, 54));
-        Configuracion.setText("Configuracion");
-
-        Historial1.setBackground(new java.awt.Color(0, 204, 54));
-        Historial1.setText("Historial");
-
-        margenMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(margenMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Agendar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Historial1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(Agendar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(90, 90, 90)
-                            .addComponent(Historial1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(170, 170, 170)
-                            .addComponent(Configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(margenMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InteractEnglishPoli");
@@ -268,11 +200,16 @@ public class Agendas extends javax.swing.JFrame {
         jButton2.setPreferredSize(new java.awt.Dimension(75, 30));
         botones.add(jButton2);
 
-        jButton3.setBackground(new java.awt.Color(1, 58, 6));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Salir");
-        jButton3.setPreferredSize(new java.awt.Dimension(75, 30));
-        botones.add(jButton3);
+        botonSalir.setBackground(new java.awt.Color(1, 58, 6));
+        botonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        botonSalir.setText("Salir");
+        botonSalir.setPreferredSize(new java.awt.Dimension(75, 30));
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+        botones.add(botonSalir);
 
         menu.add(botones);
 
@@ -436,10 +373,10 @@ public class Agendas extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Buscar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscarFecha.setText("Buscar");
+        botonBuscarFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                botonBuscarFechaActionPerformed(evt);
             }
         });
 
@@ -456,23 +393,24 @@ public class Agendas extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButton5)
-                .addGap(18, 18, 18)
-                .addComponent(verTodasAgend)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
-                .addGap(82, 82, 82)
-                .addComponent(jButton6)
-                .addGap(472, 472, 472))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(verTodasAgend)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDatebusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(botonBuscarFecha)
+                        .addGap(86, 86, 86)
+                        .addComponent(jButton6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(40, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(403, 403, 403))
         );
         jPanel2Layout.setVerticalGroup(
@@ -484,10 +422,10 @@ public class Agendas extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton5)
                         .addComponent(jButton6)
-                        .addComponent(jButton7)
                         .addComponent(jLabel3)
-                        .addComponent(verTodasAgend))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(verTodasAgend)
+                        .addComponent(botonBuscarFecha))
+                    .addComponent(jDatebusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73))
         );
 
@@ -512,11 +450,6 @@ public class Agendas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
 
     private void viewMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMapActionPerformed
         mapa mapaPoli = new mapa();
@@ -553,8 +486,20 @@ public class Agendas extends javax.swing.JFrame {
             }                
             else{datos[7] = "false";}
             Cita nueva = new Cita();
-            nueva.gurdarEnArchivo(datos);
-            limpiarCasillas();
+            String confirmar = "Desea Confirmar la Asesoria: ";
+            for(int i = 0; i < datos.length; i++){
+                confirmar += "\n"+datos[i];
+            }
+            // si = 0, no = 1, cancelar = 2
+            int aux= JOptionPane.showConfirmDialog(null,confirmar); 
+            if(aux == 0){
+                nueva.gurdarEnArchivo(datos);
+                JOptionPane.showMessageDialog(null, "Datos guardados.");
+                limpiarCasillas();
+            }
+            
+            
+            
             
         }
     }//GEN-LAST:event_viewMap1ActionPerformed
@@ -625,15 +570,37 @@ public class Agendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void botonBuscarFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        if(jDatebusqueda.getDate() == null){
+            JOptionPane.showMessageDialog(null, "Seleccione una fecha para la busqueda");
+        }else{
+            this.vaciarTabla();
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(jDatebusqueda.getDate());
+            // con esto vuelvo la fecha un LocalDate para compararla, ya que el Jdatechosser devuelve en date
+            LocalDate fecha1 = jDatebusqueda.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+            if(fecha1.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null,"Fecha no valida");
+                
+            }else{
+                this.llenartablaXFecha(fecha);
+            }
+        }
+    }//GEN-LAST:event_botonBuscarFechaActionPerformed
 
     private void verTodasAgendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTodasAgendActionPerformed
         // TODO add your handling code here:
         this.vaciarTabla();
         this.llenartabla();
     }//GEN-LAST:event_verTodasAgendActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -691,6 +658,31 @@ public class Agendas extends javax.swing.JFrame {
         
     }
     
+        public void llenartablaXFecha(String fecha){
+        Cita citas = new Cita();
+        Cita vecCitas[];
+        vecCitas = citas.cargarAlista();
+        String carga[] = new String[4];
+        // la variable controla que exista un elemento almenos
+        boolean datos = false;
+
+        
+        for (int i = 0 ; i < vecCitas.length;i++){
+            carga[0] = String.valueOf(vecCitas[i].getNumCita());
+            carga[1] = vecCitas[i].getDate();
+            carga[2] = vecCitas[i].getHour();
+            carga[3] = vecCitas[i].getPlace();
+            System.out.println("carga p2: "+carga[1]+"  fecha: "+fecha);
+            if(fecha.equalsIgnoreCase(carga[1])){
+                model.addRow(carga);
+                datos = true;
+            }
+            
+        }
+        if(!datos){JOptionPane.showMessageDialog(null, "No hay agendas en la fecha seleccionada");}
+        
+    }
+    
     public void vaciarTabla() {
         int rowCount = model.getRowCount();
         for (int i = rowCount - 1; i >= 0; i--) {
@@ -699,26 +691,21 @@ public class Agendas extends javax.swing.JFrame {
     }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agendar;
-    private javax.swing.JButton Configuracion;
     private javax.swing.JPanel Escudo;
     private javax.swing.JPanel Fondo;
-    private javax.swing.JButton Historial1;
-    private javax.swing.JButton Salir;
+    private javax.swing.JButton botonBuscarFecha;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JPanel botones;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDatebusqueda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -729,7 +716,6 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JLabel labelSelHora;
     private javax.swing.JLabel labelSelLevelEng;
     private javax.swing.JLabel labelSelePlace;
-    private javax.swing.JLabel margenMenu;
     private javax.swing.JPanel menu;
     private javax.swing.JComboBox<String> selHora;
     private javax.swing.JComboBox<String> selLevelEng;

@@ -28,202 +28,215 @@ public class Configuracion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        escudo0 = new javax.swing.JLabel();
+        menu1 = new javax.swing.JPanel();
+        titulo5 = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         titulo1 = new javax.swing.JLabel();
-        Salir = new javax.swing.JButton();
-        Agendar = new javax.swing.JButton();
-        Configuracion = new javax.swing.JButton();
-        Historial1 = new javax.swing.JButton();
-        margenMenu = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        labelCorreo = new javax.swing.JLabel();
-        pasword = new javax.swing.JLabel();
-        labelNombre = new javax.swing.JLabel();
-        textPhone = new javax.swing.JTextField();
-        textName = new javax.swing.JTextField();
-        textMail = new javax.swing.JTextField();
-        labelLastName = new javax.swing.JLabel();
-        textPhone1 = new javax.swing.JTextField();
-        labelTelefono = new javax.swing.JLabel();
-        labelUser1 = new javax.swing.JLabel();
-        textUser = new javax.swing.JTextField();
-        textPw = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        viewUsurio1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textNombreBanner = new javax.swing.JLabel();
+        textLastNameBanner = new javax.swing.JLabel();
+        botones = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        Escudo = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("InteractEnglishPoli");
+        setPreferredSize(new java.awt.Dimension(1100, 700));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setMinimumSize(new java.awt.Dimension(900, 700));
-        jPanel2.setPreferredSize(new java.awt.Dimension(900, 700));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(escudo0, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, 140, 70));
+        menu1.setBackground(new java.awt.Color(25, 104, 68));
+        menu1.setPreferredSize(new java.awt.Dimension(245, 230));
+        menu1.setLayout(new javax.swing.BoxLayout(menu1, javax.swing.BoxLayout.Y_AXIS));
+
+        titulo5.setOpaque(false);
+        titulo5.setPreferredSize(new java.awt.Dimension(189, 35));
 
         titulo2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titulo2.setForeground(new java.awt.Color(255, 255, 0));
         titulo2.setText("EnglishPoli");
-        jPanel2.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 180, 30));
 
         titulo1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titulo1.setForeground(new java.awt.Color(0, 204, 51));
         titulo1.setText("Interact");
-        jPanel2.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
 
-        Salir.setBackground(new java.awt.Color(0, 204, 54));
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout titulo5Layout = new javax.swing.GroupLayout(titulo5);
+        titulo5.setLayout(titulo5Layout);
+        titulo5Layout.setHorizontalGroup(
+            titulo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titulo5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titulo2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        titulo5Layout.setVerticalGroup(
+            titulo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titulo5Layout.createSequentialGroup()
+                .addGroup(titulo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        menu1.add(titulo5);
+
+        viewUsurio1.setBackground(new java.awt.Color(255, 255, 255));
+        viewUsurio1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(102, 102, 102)));
+        viewUsurio1.setMaximumSize(new java.awt.Dimension(189, 60));
+        viewUsurio1.setPreferredSize(new java.awt.Dimension(189, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
+
+        textNombreBanner.setForeground(new java.awt.Color(0, 0, 0));
+        textNombreBanner.setText("Usuario #001");
+        textNombreBanner.setMaximumSize(new java.awt.Dimension(68, 25));
+        textNombreBanner.setMinimumSize(new java.awt.Dimension(68, 25));
+
+        textLastNameBanner.setText("jLabel2");
+
+        javax.swing.GroupLayout viewUsurio1Layout = new javax.swing.GroupLayout(viewUsurio1);
+        viewUsurio1.setLayout(viewUsurio1Layout);
+        viewUsurio1Layout.setHorizontalGroup(
+            viewUsurio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewUsurio1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(viewUsurio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textLastNameBanner))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        viewUsurio1Layout.setVerticalGroup(
+            viewUsurio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewUsurio1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(viewUsurio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addGroup(viewUsurio1Layout.createSequentialGroup()
+                        .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textLastNameBanner)))
+                .addGap(50, 50, 50))
+        );
+
+        menu1.add(viewUsurio1);
+
+        botones.setBackground(new java.awt.Color(25, 104, 68));
+        botones.setForeground(new java.awt.Color(0, 0, 0));
+        botones.setLayout(new java.awt.GridLayout(0, 1));
+
+        jButton1.setBackground(new java.awt.Color(1, 58, 6));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Agendar");
+        jButton1.setPreferredSize(new java.awt.Dimension(75, 30));
+        botones.add(jButton1);
+
+        jButton4.setBackground(new java.awt.Color(1, 58, 6));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Historial");
+        jButton4.setPreferredSize(new java.awt.Dimension(75, 30));
+        botones.add(jButton4);
+
+        jButton2.setBackground(new java.awt.Color(1, 58, 6));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Configurar");
+        jButton2.setPreferredSize(new java.awt.Dimension(75, 30));
+        botones.add(jButton2);
+
+        botonSalir.setBackground(new java.awt.Color(1, 58, 6));
+        botonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        botonSalir.setText("Salir");
+        botonSalir.setPreferredSize(new java.awt.Dimension(75, 30));
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                botonSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 120, 80));
+        botones.add(botonSalir);
 
-        Agendar.setBackground(new java.awt.Color(0, 204, 54));
-        Agendar.setText("Agendar");
-        jPanel2.add(Agendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 120, 80));
+        menu1.add(botones);
 
-        Configuracion.setBackground(new java.awt.Color(0, 204, 54));
-        Configuracion.setText("Configuracion");
-        Configuracion.setEnabled(false);
-        jPanel2.add(Configuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, 80));
+        jPanel6.setBackground(new java.awt.Color(25, 104, 68));
+        jPanel6.setPreferredSize(new java.awt.Dimension(240, 150));
 
-        Historial1.setBackground(new java.awt.Color(0, 204, 54));
-        Historial1.setText("Historial");
-        jPanel2.add(Historial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 120, 80));
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 244, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 211, Short.MAX_VALUE)
+        );
 
-        margenMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(margenMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 340));
+        menu1.add(jPanel6);
 
-        jButton1.setText("Crear usurio");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        Escudo.setBackground(new java.awt.Color(25, 104, 68));
+        Escudo.setPreferredSize(new java.awt.Dimension(240, 150));
 
-        jButton2.setText("Modificar usurio");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
+        javax.swing.GroupLayout EscudoLayout = new javax.swing.GroupLayout(Escudo);
+        Escudo.setLayout(EscudoLayout);
+        EscudoLayout.setHorizontalGroup(
+            EscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 244, Short.MAX_VALUE)
+        );
+        EscudoLayout.setVerticalGroup(
+            EscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 211, Short.MAX_VALUE)
+        );
 
-        jButton3.setText("Eliminar usurio");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, -1, -1));
+        menu1.add(Escudo);
 
-        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1100, 700));
 
-        labelCorreo.setForeground(new java.awt.Color(0, 0, 0));
-        labelCorreo.setText("Correo poli:");
-        jLayeredPane1.add(labelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 108, -1, 20));
-
-        pasword.setForeground(new java.awt.Color(0, 0, 0));
-        pasword.setText("Contraeña:");
-        jLayeredPane1.add(pasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 203, -1, -1));
-
-        labelNombre.setForeground(new java.awt.Color(0, 0, 0));
-        labelNombre.setText("Nombre:");
-        jLayeredPane1.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
-        jLayeredPane1.add(textPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 140, 120, 20));
-
-        textName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNameActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 28, 250, 20));
-
-        textMail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textMailActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(textMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 54, 250, 20));
-
-        labelLastName.setForeground(new java.awt.Color(0, 0, 0));
-        labelLastName.setText("Apellidos:");
-        jLayeredPane1.add(labelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 56, -1, -1));
-        jLayeredPane1.add(textPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 108, 250, 20));
-
-        labelTelefono.setForeground(new java.awt.Color(0, 0, 0));
-        labelTelefono.setText("Telefono:");
-        jLayeredPane1.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 142, -1, -1));
-
-        labelUser1.setForeground(new java.awt.Color(0, 0, 0));
-        labelUser1.setText("Usuario:");
-        jLayeredPane1.add(labelUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
-        jLayeredPane1.add(textUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 168, 120, 20));
-        jLayeredPane1.add(textPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 200, 120, -1));
-
-        jButton4.setText("Guardar");
-        jLayeredPane1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 275, -1, -1));
-
-        jLabel1.setText("Administrador:");
-        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 203, -1, -1));
-
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 202, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Documento :");
-        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 83, -1, -1));
-        jLayeredPane1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 80, 96, -1));
-
-        jPanel2.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 510, 320));
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1100, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
-
-    private void textMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textMailActionPerformed
-
-    private void textNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textNameActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            // TODO add your handling code here:
-            jLayeredPane1.setVisible(false);
-            textMail.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Configuracion visibles = new Configuracion();
-        visibles.visibles();
+        
         
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -261,40 +274,24 @@ public class Configuracion extends javax.swing.JFrame {
         });
     }
     
-    private void visibles(){
-        labelTelefono.setVisible(false);
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agendar;
-    private javax.swing.JButton Configuracion;
-    private javax.swing.JButton Historial1;
-    private javax.swing.JButton Salir;
-    private javax.swing.JLabel escudo0;
+    private javax.swing.JPanel Escudo;
+    private javax.swing.JButton botonSalir;
+    private javax.swing.JPanel botones;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel labelCorreo;
-    private javax.swing.JLabel labelLastName;
-    private javax.swing.JLabel labelNombre;
-    private javax.swing.JLabel labelTelefono;
-    private javax.swing.JLabel labelUser1;
-    private javax.swing.JLabel margenMenu;
-    private javax.swing.JLabel pasword;
-    private javax.swing.JTextField textMail;
-    private javax.swing.JTextField textName;
-    private javax.swing.JTextField textPhone;
-    private javax.swing.JTextField textPhone1;
-    private javax.swing.JTextField textPw;
-    private javax.swing.JTextField textUser;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel menu1;
+    private javax.swing.JLabel textLastNameBanner;
+    private javax.swing.JLabel textNombreBanner;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;
+    private javax.swing.JPanel titulo5;
+    private javax.swing.JPanel viewUsurio1;
     // End of variables declaration//GEN-END:variables
 }

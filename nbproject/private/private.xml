@@ -5,11 +5,13 @@
         <group>
             <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/Configuracion.java</file>
             <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/Agendas.java</file>
+            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/archivos/citas.txt</file>
             <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/inenpoli/Cita.java</file>
-            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/VPrincipal.java</file>
-            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/Inicio.java</file>
             <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/inenpoli/InEnpoli.java</file>
+            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/Inicio.java</file>
             <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/inenpoli/Usuario.java</file>
+            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/archivos/users.txt</file>
+            <file>file:/C:/Users/jpcc-/OneDrive/Documentos/NetBeansProjects/IEPoli/src/GUI/Muestra.java</file>
         </group>
     </open-files>
 </project-private>

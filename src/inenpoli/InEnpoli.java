@@ -5,6 +5,7 @@
 package inenpoli;
 
 import GUI.Inicio;
+import javax.swing.JOptionPane;
 
 /**
  *
