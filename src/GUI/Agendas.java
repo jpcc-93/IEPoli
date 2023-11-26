@@ -61,7 +61,7 @@ public class Agendas extends javax.swing.JFrame {
         botones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        openConfigurar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         Escudo = new javax.swing.JPanel();
@@ -194,11 +194,16 @@ public class Agendas extends javax.swing.JFrame {
         jButton4.setPreferredSize(new java.awt.Dimension(75, 30));
         botones.add(jButton4);
 
-        jButton2.setBackground(new java.awt.Color(1, 58, 6));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Configurar");
-        jButton2.setPreferredSize(new java.awt.Dimension(75, 30));
-        botones.add(jButton2);
+        openConfigurar.setBackground(new java.awt.Color(1, 58, 6));
+        openConfigurar.setForeground(new java.awt.Color(255, 255, 255));
+        openConfigurar.setText("Configurar");
+        openConfigurar.setPreferredSize(new java.awt.Dimension(75, 30));
+        openConfigurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openConfigurarActionPerformed(evt);
+            }
+        });
+        botones.add(openConfigurar);
 
         botonSalir.setBackground(new java.awt.Color(1, 58, 6));
         botonSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,8 +258,10 @@ public class Agendas extends javax.swing.JFrame {
         seleccion.setLayout(new java.awt.GridLayout(2, 1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        labelSelFecha.setForeground(new java.awt.Color(0, 0, 0));
         labelSelFecha.setText("Selecciona la fecha: ");
         jPanel1.add(labelSelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 40, -1, -1));
 
@@ -262,6 +269,7 @@ public class Agendas extends javax.swing.JFrame {
         selcDate.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(selcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 240, -1));
 
+        labelRol.setForeground(new java.awt.Color(0, 0, 0));
         labelRol.setText("Rol:");
         jPanel1.add(labelRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
 
@@ -285,6 +293,7 @@ public class Agendas extends javax.swing.JFrame {
         });
         jPanel1.add(viewMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
+        labelSelHora.setForeground(new java.awt.Color(0, 0, 0));
         labelSelHora.setText("Selecciona la Hora : ");
         jPanel1.add(labelSelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
@@ -298,6 +307,7 @@ public class Agendas extends javax.swing.JFrame {
         });
         jPanel1.add(selPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 230, -1));
 
+        labelSelePlace.setForeground(new java.awt.Color(0, 0, 0));
         labelSelePlace.setText("Selecciona lugar de encuentro: ");
         jPanel1.add(labelSelePlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
@@ -306,6 +316,7 @@ public class Agendas extends javax.swing.JFrame {
         selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Asesor", "Aprendiz" }));
         jPanel1.add(selRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
+        labelSelLevelEng.setForeground(new java.awt.Color(0, 0, 0));
         labelSelLevelEng.setText("Nivel Ingles: ");
         jPanel1.add(labelSelLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
@@ -329,6 +340,7 @@ public class Agendas extends javax.swing.JFrame {
         });
         jPanel1.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
+        labelSTema.setForeground(new java.awt.Color(0, 0, 0));
         labelSTema.setText("Tema:");
         jPanel1.add(labelSTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
 
@@ -337,6 +349,7 @@ public class Agendas extends javax.swing.JFrame {
         selTema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5" }));
         jPanel1.add(selTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 90, -1));
 
+        labelObserva.setForeground(new java.awt.Color(0, 0, 0));
         labelObserva.setText("Observaciones:");
         jPanel1.add(labelObserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, -1));
 
@@ -347,6 +360,7 @@ public class Agendas extends javax.swing.JFrame {
 
         textObservaciones.setBackground(new java.awt.Color(204, 204, 204));
         textObservaciones.setColumns(20);
+        textObservaciones.setForeground(new java.awt.Color(0, 0, 0));
         textObservaciones.setRows(5);
         jScrollPane1.setViewportView(textObservaciones);
 
@@ -602,6 +616,14 @@ public class Agendas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
 
+    private void openConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openConfigurarActionPerformed
+        // TODO add your handling code here:
+            Configuracion configuracion = new Configuracion(usuarioUso);
+            configuracion.setLocationRelativeTo(null);
+            this.dispose();
+            configuracion.setVisible(true);
+    }//GEN-LAST:event_openConfigurarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -697,7 +719,6 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel botones;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -717,6 +738,7 @@ public class Agendas extends javax.swing.JFrame {
     private javax.swing.JLabel labelSelLevelEng;
     private javax.swing.JLabel labelSelePlace;
     private javax.swing.JPanel menu;
+    private javax.swing.JButton openConfigurar;
     private javax.swing.JComboBox<String> selHora;
     private javax.swing.JComboBox<String> selLevelEng;
     private javax.swing.JComboBox<String> selPlace;

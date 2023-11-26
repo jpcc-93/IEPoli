@@ -238,7 +238,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="openConfigurar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6" green="3a" red="1" type="rgb"/>
@@ -251,6 +251,9 @@
                   <Dimension value="[75, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openConfigurarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonSalir">
               <Properties>
@@ -353,6 +356,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -361,6 +367,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="labelSelFecha">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Selecciona la fecha: "/>
                   </Properties>
                   <Constraints>
@@ -386,6 +395,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelRol">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Rol:"/>
                   </Properties>
                   <Constraints>
@@ -457,6 +469,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelSelHora">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Selecciona la Hora : "/>
                   </Properties>
                   <Constraints>
@@ -499,6 +514,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelSelePlace">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Selecciona lugar de encuentro: "/>
                   </Properties>
                   <Constraints>
@@ -534,6 +552,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelSelLevelEng">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Nivel Ingles: "/>
                   </Properties>
                   <Constraints>
@@ -594,6 +615,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelSTema">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Tema:"/>
                   </Properties>
                   <Constraints>
@@ -632,6 +656,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelObserva">
                   <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Observaciones:"/>
                   </Properties>
                   <Constraints>
@@ -672,6 +699,9 @@
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
                         <Property name="rows" type="int" value="5"/>
                       </Properties>
                     </Component>
