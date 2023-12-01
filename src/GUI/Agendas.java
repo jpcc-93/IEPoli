@@ -4,6 +4,14 @@
  */
 package GUI;
 
+import inenpoli.Cita;
+import inenpoli.Usuario;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pablo U
@@ -13,10 +21,24 @@ public class Agendas extends javax.swing.JFrame {
     /**
      * Creates new form Agendas
      */
-    public Agendas() {
+    Usuario usuarioUso;
+    
+    DefaultTableModel model;
+    public Agendas(Usuario usuario) {
         initComponents();
-        Inicio escudo = new Inicio();
-        escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        usuarioUso = new Usuario();
+        usuarioUso = usuario;
+        //Inicio escudo = new Inicio();
+        //escudo.ajustarImag(escudo0,"src/imagenes/escudo poli.png");
+        textNombreBanner.setText(usuario.getName());
+        textLastNameBanner.setText(usuarioUso.getLastName());
+        model = new DefaultTableModel();
+        model.addColumn("Numero Agenda");
+        model.addColumn("Fecha ");
+        model.addColumn("Hora");
+        model.addColumn("Lugar");
+        this.tablaAsesorias.setModel(model);
+        
     }
 
     /**
@@ -28,18 +50,27 @@ public class Agendas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        escudo0 = new javax.swing.JLabel();
+        menu = new javax.swing.JPanel();
+        titulo = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         titulo1 = new javax.swing.JLabel();
-        Salir = new javax.swing.JButton();
-        Agendar = new javax.swing.JButton();
-        Configuracion = new javax.swing.JButton();
-        Historial1 = new javax.swing.JButton();
-        margenMenu = new javax.swing.JLabel();
-        labelRol = new javax.swing.JLabel();
-        selcDate = new com.toedter.calendar.JDateChooser();
+        viewUsurio = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        textNombreBanner = new javax.swing.JLabel();
+        textLastNameBanner = new javax.swing.JLabel();
+        botones = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        openConfigurar = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        Escudo = new javax.swing.JPanel();
+        Fondo = new javax.swing.JPanel();
+        seleccion = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         labelSelFecha = new javax.swing.JLabel();
+        selcDate = new com.toedter.calendar.JDateChooser();
+        labelRol = new javax.swing.JLabel();
         selHora = new javax.swing.JComboBox<>();
         viewMap = new javax.swing.JButton();
         labelSelHora = new javax.swing.JLabel();
@@ -48,73 +79,209 @@ public class Agendas extends javax.swing.JFrame {
         selRol = new javax.swing.JComboBox<>();
         labelSelLevelEng = new javax.swing.JLabel();
         selLevelEng = new javax.swing.JComboBox<>();
+        viewMap1 = new javax.swing.JButton();
+        labelSTema = new javax.swing.JLabel();
+        selTema = new javax.swing.JComboBox<>();
+        labelObserva = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textObservaciones = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAsesorias = new javax.swing.JTable();
-        viewMap1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        botonBuscarFecha = new javax.swing.JButton();
+        jDatebusqueda = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
+        verTodasAgend = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("InteractEnglishPoli");
+        setPreferredSize(new java.awt.Dimension(1100, 700));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setMinimumSize(new java.awt.Dimension(900, 700));
-        jPanel2.setPreferredSize(new java.awt.Dimension(900, 700));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(escudo0, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, 140, 70));
+        menu.setBackground(new java.awt.Color(25, 104, 68));
+        menu.setPreferredSize(new java.awt.Dimension(245, 230));
+        menu.setLayout(new javax.swing.BoxLayout(menu, javax.swing.BoxLayout.Y_AXIS));
+
+        titulo.setOpaque(false);
+        titulo.setPreferredSize(new java.awt.Dimension(189, 35));
 
         titulo2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titulo2.setForeground(new java.awt.Color(255, 255, 0));
         titulo2.setText("EnglishPoli");
-        jPanel2.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 180, 30));
 
         titulo1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titulo1.setForeground(new java.awt.Color(0, 204, 51));
         titulo1.setText("Interact");
-        jPanel2.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
 
-        Salir.setBackground(new java.awt.Color(0, 204, 54));
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout tituloLayout = new javax.swing.GroupLayout(titulo);
+        titulo.setLayout(tituloLayout);
+        tituloLayout.setHorizontalGroup(
+            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titulo2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tituloLayout.setVerticalGroup(
+            tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloLayout.createSequentialGroup()
+                .addGroup(tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        menu.add(titulo);
+
+        viewUsurio.setBackground(new java.awt.Color(255, 255, 255));
+        viewUsurio.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(102, 102, 102)));
+        viewUsurio.setMaximumSize(new java.awt.Dimension(189, 60));
+        viewUsurio.setPreferredSize(new java.awt.Dimension(189, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
+
+        textNombreBanner.setForeground(new java.awt.Color(0, 0, 0));
+        textNombreBanner.setText("Usuario #001");
+        textNombreBanner.setMaximumSize(new java.awt.Dimension(68, 25));
+        textNombreBanner.setMinimumSize(new java.awt.Dimension(68, 25));
+
+        textLastNameBanner.setText("jLabel2");
+
+        javax.swing.GroupLayout viewUsurioLayout = new javax.swing.GroupLayout(viewUsurio);
+        viewUsurio.setLayout(viewUsurioLayout);
+        viewUsurioLayout.setHorizontalGroup(
+            viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewUsurioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textLastNameBanner))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        viewUsurioLayout.setVerticalGroup(
+            viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewUsurioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(viewUsurioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addGroup(viewUsurioLayout.createSequentialGroup()
+                        .addComponent(textNombreBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textLastNameBanner)))
+                .addGap(50, 50, 50))
+        );
+
+        menu.add(viewUsurio);
+
+        botones.setBackground(new java.awt.Color(25, 104, 68));
+        botones.setForeground(new java.awt.Color(0, 0, 0));
+        botones.setLayout(new java.awt.GridLayout(0, 1));
+
+        jButton1.setBackground(new java.awt.Color(1, 58, 6));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Agendar");
+        jButton1.setPreferredSize(new java.awt.Dimension(75, 30));
+        botones.add(jButton1);
+
+        jButton4.setBackground(new java.awt.Color(1, 58, 6));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Historial");
+        jButton4.setPreferredSize(new java.awt.Dimension(75, 30));
+        botones.add(jButton4);
+
+        openConfigurar.setBackground(new java.awt.Color(1, 58, 6));
+        openConfigurar.setForeground(new java.awt.Color(255, 255, 255));
+        openConfigurar.setText("Configurar");
+        openConfigurar.setPreferredSize(new java.awt.Dimension(75, 30));
+        openConfigurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                openConfigurarActionPerformed(evt);
             }
         });
-        jPanel2.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 120, 80));
+        botones.add(openConfigurar);
 
-        Agendar.setBackground(new java.awt.Color(0, 204, 54));
-        Agendar.setText("Agendar");
-        Agendar.setEnabled(false);
-        jPanel2.add(Agendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 120, 80));
+        botonSalir.setBackground(new java.awt.Color(1, 58, 6));
+        botonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        botonSalir.setText("Salir");
+        botonSalir.setPreferredSize(new java.awt.Dimension(75, 30));
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+        botones.add(botonSalir);
 
-        Configuracion.setBackground(new java.awt.Color(0, 204, 54));
-        Configuracion.setText("Configuracion");
-        jPanel2.add(Configuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, 80));
+        menu.add(botones);
 
-        Historial1.setBackground(new java.awt.Color(0, 204, 54));
-        Historial1.setText("Historial");
-        jPanel2.add(Historial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 120, 80));
+        jPanel4.setBackground(new java.awt.Color(25, 104, 68));
+        jPanel4.setPreferredSize(new java.awt.Dimension(240, 150));
 
-        margenMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(margenMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 340));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 189, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 211, Short.MAX_VALUE)
+        );
 
-        labelRol.setText("Rol:");
-        jPanel2.add(labelRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        menu.add(jPanel4);
+
+        Escudo.setBackground(new java.awt.Color(25, 104, 68));
+        Escudo.setPreferredSize(new java.awt.Dimension(240, 150));
+
+        javax.swing.GroupLayout EscudoLayout = new javax.swing.GroupLayout(Escudo);
+        Escudo.setLayout(EscudoLayout);
+        EscudoLayout.setHorizontalGroup(
+            EscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 189, Short.MAX_VALUE)
+        );
+        EscudoLayout.setVerticalGroup(
+            EscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 211, Short.MAX_VALUE)
+        );
+
+        menu.add(Escudo);
+
+        Fondo.setBackground(new java.awt.Color(255, 255, 255));
+        Fondo.setForeground(new java.awt.Color(255, 255, 255));
+        Fondo.setLayout(new java.awt.CardLayout());
+
+        seleccion.setBackground(new java.awt.Color(255, 255, 255));
+        seleccion.setLayout(new java.awt.GridLayout(2, 1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelSelFecha.setForeground(new java.awt.Color(0, 0, 0));
+        labelSelFecha.setText("Selecciona la fecha: ");
+        jPanel1.add(labelSelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 40, -1, -1));
 
         selcDate.setBackground(new java.awt.Color(255, 255, 255));
         selcDate.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(selcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 240, -1));
+        jPanel1.add(selcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 240, -1));
 
-        labelSelFecha.setText("Selecciona la fecha: ");
-        jPanel2.add(labelSelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+        labelRol.setForeground(new java.awt.Color(0, 0, 0));
+        labelRol.setText("Rol:");
+        jPanel1.add(labelRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
 
         selHora.setBackground(new java.awt.Color(255, 255, 255));
         selHora.setForeground(new java.awt.Color(0, 0, 0));
-        selHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM" }));
+        selHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM" }));
         selHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selHoraActionPerformed(evt);
             }
         });
-        jPanel2.add(selHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 130, -1));
+        jPanel1.add(selHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 130, -1));
 
         viewMap.setBackground(new java.awt.Color(204, 204, 204));
         viewMap.setForeground(new java.awt.Color(0, 0, 0));
@@ -124,10 +291,11 @@ public class Agendas extends javax.swing.JFrame {
                 viewMapActionPerformed(evt);
             }
         });
-        jPanel2.add(viewMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, -1, -1));
+        jPanel1.add(viewMap, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
+        labelSelHora.setForeground(new java.awt.Color(0, 0, 0));
         labelSelHora.setText("Selecciona la Hora : ");
-        jPanel2.add(labelSelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+        jPanel1.add(labelSelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         selPlace.setBackground(new java.awt.Color(255, 255, 255));
         selPlace.setForeground(new java.awt.Color(0, 0, 0));
@@ -137,53 +305,30 @@ public class Agendas extends javax.swing.JFrame {
                 selPlaceActionPerformed(evt);
             }
         });
-        jPanel2.add(selPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 230, -1));
+        jPanel1.add(selPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 230, -1));
 
+        labelSelePlace.setForeground(new java.awt.Color(0, 0, 0));
         labelSelePlace.setText("Selecciona lugar de encuentro: ");
-        jPanel2.add(labelSelePlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+        jPanel1.add(labelSelePlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         selRol.setBackground(new java.awt.Color(255, 255, 255));
         selRol.setForeground(new java.awt.Color(0, 0, 0));
-        selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asesor", "Aprendiz" }));
-        jPanel2.add(selRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, -1));
+        selRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Asesor", "Aprendiz" }));
+        jPanel1.add(selRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
+        labelSelLevelEng.setForeground(new java.awt.Color(0, 0, 0));
         labelSelLevelEng.setText("Nivel Ingles: ");
-        jPanel2.add(labelSelLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+        jPanel1.add(labelSelLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
         selLevelEng.setBackground(new java.awt.Color(255, 255, 255));
         selLevelEng.setForeground(new java.awt.Color(0, 0, 0));
-        selLevelEng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles 1", "Ingles 2", "Ingles 3", " ", " " }));
+        selLevelEng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Ingles 1", "Ingles 2", "Ingles 3", " ", " " }));
         selLevelEng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selLevelEngActionPerformed(evt);
             }
         });
-        jPanel2.add(selLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, -1));
-
-        tablaAsesorias.setBackground(new java.awt.Color(102, 102, 102));
-        tablaAsesorias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tablaAsesorias.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Fecha", "Hora", "Lugar", "Nivel", "Tema"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tablaAsesorias);
-
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 590, 180));
+        jPanel1.add(selLevelEng, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
 
         viewMap1.setBackground(new java.awt.Color(204, 204, 204));
         viewMap1.setForeground(new java.awt.Color(0, 0, 0));
@@ -193,26 +338,132 @@ public class Agendas extends javax.swing.JFrame {
                 viewMap1ActionPerformed(evt);
             }
         });
-        jPanel2.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, -1));
+        jPanel1.add(viewMap1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+
+        labelSTema.setForeground(new java.awt.Color(0, 0, 0));
+        labelSTema.setText("Tema:");
+        jPanel1.add(labelSTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
+
+        selTema.setBackground(new java.awt.Color(255, 255, 255));
+        selTema.setForeground(new java.awt.Color(0, 0, 0));
+        selTema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Tema 1", "Tema 2", "Tema 3", "Tema 4", "Tema 5" }));
+        jPanel1.add(selTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 90, -1));
+
+        labelObserva.setForeground(new java.awt.Color(0, 0, 0));
+        labelObserva.setText("Observaciones:");
+        jPanel1.add(labelObserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, -1));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        textObservaciones.setBackground(new java.awt.Color(204, 204, 204));
+        textObservaciones.setColumns(20);
+        textObservaciones.setForeground(new java.awt.Color(0, 0, 0));
+        textObservaciones.setRows(5);
+        jScrollPane1.setViewportView(textObservaciones);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, -1, -1));
+
+        seleccion.add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
+
+        tablaAsesorias.setBackground(new java.awt.Color(102, 102, 102));
+        tablaAsesorias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tablaAsesorias.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane2.setViewportView(tablaAsesorias);
+
+        jButton5.setText("Ver mis agendas");
+
+        jButton6.setText("Unirme");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        botonBuscarFecha.setText("Buscar");
+        botonBuscarFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarFechaActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Buscar por fecha:");
+
+        verTodasAgend.setText("Ver Todas");
+        verTodasAgend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verTodasAgendActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(verTodasAgend)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDatebusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(botonBuscarFecha)
+                        .addGap(86, 86, 86)
+                        .addComponent(jButton6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(40, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(403, 403, 403))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton5)
+                        .addComponent(jButton6)
+                        .addComponent(jLabel3)
+                        .addComponent(verTodasAgend)
+                        .addComponent(botonBuscarFecha))
+                    .addComponent(jDatebusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
+        );
+
+        seleccion.add(jPanel2);
+
+        Fondo.add(seleccion, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_SalirActionPerformed
 
     private void viewMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMapActionPerformed
         mapa mapaPoli = new mapa();
@@ -233,7 +484,145 @@ public class Agendas extends javax.swing.JFrame {
 
     private void viewMap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMap1ActionPerformed
         // TODO add your handling code here:
+        String[] datos = new String[8];
+        if(validarCasillas()){
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(selcDate.getDate());
+            datos[1] = fecha;
+            datos[2] = String.valueOf(selHora.getSelectedItem());
+            datos[3] = String.valueOf(selPlace.getSelectedItem());
+            datos[4] = String.valueOf(selLevelEng.getSelectedItem());
+            datos[5] = String.valueOf(selRol.getSelectedItem());
+            datos[6] = String.valueOf(textObservaciones.getText());
+            if(datos[5].equalsIgnoreCase("Asesor")){
+            datos[7] = "true";
+            }                
+            else{datos[7] = "false";}
+            Cita nueva = new Cita();
+            String confirmar = "Desea Confirmar la Asesoria: ";
+            for(int i = 0; i < datos.length; i++){
+                confirmar += "\n"+datos[i];
+            }
+            // si = 0, no = 1, cancelar = 2
+            int aux= JOptionPane.showConfirmDialog(null,confirmar); 
+            if(aux == 0){
+                nueva.gurdarEnArchivo(datos);
+                JOptionPane.showMessageDialog(null, "Datos guardados.");
+                limpiarCasillas();
+            }
+            
+            
+            
+            
+        }
     }//GEN-LAST:event_viewMap1ActionPerformed
+    
+    private void limpiarCasillas(){
+        selcDate.setDate(null);
+        selHora.setSelectedIndex(0);
+        selPlace.setSelectedIndex(0);
+        selLevelEng.setSelectedIndex(0);
+        selRol.setSelectedIndex(0);
+        selTema.setSelectedIndex(0);
+        textObservaciones.setText("");
+    }
+    private boolean validarCasillas(){
+        boolean datosOk = true;
+        String mensajeFaltan = "";
+        if(selcDate.getDate() != null){
+            
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(selcDate.getDate());
+            // con esto vuelvo la fecha un LocalDate para compararla, ya que el Jdatechosser devuelve en date
+            LocalDate fecha1 = selcDate.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+            if(fecha1.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null,"Fecha no valida");
+                return datosOk = false;
+            }
+            
+        }else{
+            mensajeFaltan += "\nFecha";
+            datosOk = false;
+        }
+        if (selHora.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nHora";
+            datosOk = false;
+        }
+        if (selPlace.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nLugar";
+            datosOk = false;
+        }
+        if (selLevelEng.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nNivel de ingles";
+            datosOk = false;
+        }
+        if (selRol.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nRol";
+            datosOk = false;
+        }
+        if (selTema.getSelectedItem()!= "*"){
+        }else{
+            mensajeFaltan += "\nTema";
+            datosOk = false;
+        }
+        if(!datosOk){
+            JOptionPane.showMessageDialog(null, "Faltan los datos: "+mensajeFaltan);
+        }
+        
+        return datosOk;
+    }
+            
+            
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void botonBuscarFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarFechaActionPerformed
+        // TODO add your handling code here:
+        if(jDatebusqueda.getDate() == null){
+            JOptionPane.showMessageDialog(null, "Seleccione una fecha para la busqueda");
+        }else{
+            this.vaciarTabla();
+            //cambio el fromato de DATE a STRING 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String fecha = sdf.format(jDatebusqueda.getDate());
+            // con esto vuelvo la fecha un LocalDate para compararla, ya que el Jdatechosser devuelve en date
+            LocalDate fecha1 = jDatebusqueda.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
+            if(fecha1.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null,"Fecha no valida");
+                
+            }else{
+                this.llenartablaXFecha(fecha);
+            }
+        }
+    }//GEN-LAST:event_botonBuscarFechaActionPerformed
+
+    private void verTodasAgendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTodasAgendActionPerformed
+        // TODO add your handling code here:
+        this.vaciarTabla();
+        this.llenartabla();
+    }//GEN-LAST:event_verTodasAgendActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void openConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openConfigurarActionPerformed
+        // TODO add your handling code here:
+            Configuracion configuracion = new Configuracion(usuarioUso);
+            configuracion.setLocationRelativeTo(null);
+            this.dispose();
+            configuracion.setVisible(true);
+    }//GEN-LAST:event_openConfigurarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,34 +654,108 @@ public class Agendas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agendas().setVisible(true);
+                //new Agendas().setVisible(true);
+                
+                
+                
             }
         });
     }
+    
+    
+    public void llenartabla(){
+        Cita citas = new Cita();
+        Cita vecCitas[];
+        vecCitas = citas.cargarAlista();
+        String carga[] = new String[4];
+
+        
+        for (int i = 0 ; i < vecCitas.length;i++){
+            carga[0] = String.valueOf(vecCitas[i].getNumCita());
+            carga[1] = vecCitas[i].getDate();
+            carga[2] = vecCitas[i].getHour();
+            carga[3] = vecCitas[i].getPlace();
+            model.addRow(carga);
+        }
+        
+    }
+    
+        public void llenartablaXFecha(String fecha){
+        Cita citas = new Cita();
+        Cita vecCitas[];
+        vecCitas = citas.cargarAlista();
+        String carga[] = new String[4];
+        // la variable controla que exista un elemento almenos
+        boolean datos = false;
+
+        
+        for (int i = 0 ; i < vecCitas.length;i++){
+            carga[0] = String.valueOf(vecCitas[i].getNumCita());
+            carga[1] = vecCitas[i].getDate();
+            carga[2] = vecCitas[i].getHour();
+            carga[3] = vecCitas[i].getPlace();
+            System.out.println("carga p2: "+carga[1]+"  fecha: "+fecha);
+            if(fecha.equalsIgnoreCase(carga[1])){
+                model.addRow(carga);
+                datos = true;
+            }
+            
+        }
+        if(!datos){JOptionPane.showMessageDialog(null, "No hay agendas en la fecha seleccionada");}
+        
+    }
+    
+    public void vaciarTabla() {
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agendar;
-    private javax.swing.JButton Configuracion;
-    private javax.swing.JButton Historial1;
-    private javax.swing.JButton Salir;
-    private javax.swing.JLabel escudo0;
+    private javax.swing.JPanel Escudo;
+    private javax.swing.JPanel Fondo;
+    private javax.swing.JButton botonBuscarFecha;
+    private javax.swing.JButton botonSalir;
+    private javax.swing.JPanel botones;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private com.toedter.calendar.JDateChooser jDatebusqueda;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel labelObserva;
     private javax.swing.JLabel labelRol;
+    private javax.swing.JLabel labelSTema;
     private javax.swing.JLabel labelSelFecha;
     private javax.swing.JLabel labelSelHora;
     private javax.swing.JLabel labelSelLevelEng;
     private javax.swing.JLabel labelSelePlace;
-    private javax.swing.JLabel margenMenu;
+    private javax.swing.JPanel menu;
+    private javax.swing.JButton openConfigurar;
     private javax.swing.JComboBox<String> selHora;
     private javax.swing.JComboBox<String> selLevelEng;
     private javax.swing.JComboBox<String> selPlace;
     private javax.swing.JComboBox<String> selRol;
+    private javax.swing.JComboBox<String> selTema;
     private com.toedter.calendar.JDateChooser selcDate;
+    private javax.swing.JPanel seleccion;
     private javax.swing.JTable tablaAsesorias;
+    private javax.swing.JLabel textLastNameBanner;
+    private javax.swing.JLabel textNombreBanner;
+    private javax.swing.JTextArea textObservaciones;
+    private javax.swing.JPanel titulo;
     private javax.swing.JLabel titulo1;
     private javax.swing.JLabel titulo2;
+    private javax.swing.JButton verTodasAgend;
     private javax.swing.JButton viewMap;
     private javax.swing.JButton viewMap1;
+    private javax.swing.JPanel viewUsurio;
     // End of variables declaration//GEN-END:variables
 }

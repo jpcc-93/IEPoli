@@ -1,0 +1,15 @@
+Tamaño ventana logueo
+[660, 280]
+
+
+Color Fondo oscuro
+[1,58,6]
+
+Color Fondo Claro
+[25,104,68]
+
+color amarillo Titulo
+[255,255,0]
+
+color verde Titulo
+[0,204,51]

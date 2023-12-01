@@ -4,10 +4,13 @@
  */
 package GUI;
 
+import inenpoli.Usuario;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,9 +21,14 @@ public class Inicio extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+    Usuario[] loguinlist;
+    
+    public Inicio(){}
+    
+    public Inicio(Usuario[] loguin) {
         initComponents();
-        ajustarImag(escudo,"src/imagenes/escudo poli.png");
+        this.loguinlist = loguin;
+        ajustarImag(escudo,"src/imagenes/escudo poli - copia.png");
     }
 
     /**
@@ -32,30 +40,42 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        escudo = new javax.swing.JLabel();
+        panelFondo = new javax.swing.JPanel();
+        loguin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ingreso = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        textPw = new javax.swing.JPasswordField();
         texUsuario = new javax.swing.JTextPane();
+        textErrorLog = new javax.swing.JLabel();
+        panelEditFondo1 = new javax.swing.JPanel();
+        titulo = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         titulo1 = new javax.swing.JLabel();
-        margen1 = new javax.swing.JLabel();
+        panelEditFondo2 = new javax.swing.JPanel();
+        contenedorEscudo = new javax.swing.JPanel();
+        escudo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("InteractEnglishPoli");
+        setBackground(new java.awt.Color(153, 153, 153));
         setResizable(false);
+        setSize(new java.awt.Dimension(660, 280));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setMinimumSize(new java.awt.Dimension(400, 700));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(escudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 140, 70));
+        panelFondo.setBackground(new java.awt.Color(255, 255, 255));
+        panelFondo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelFondo.setMaximumSize(new java.awt.Dimension(660, 280));
+        panelFondo.setMinimumSize(new java.awt.Dimension(660, 280));
+        panelFondo.setPreferredSize(new java.awt.Dimension(650, 250));
+        panelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        loguin.setBackground(new java.awt.Color(255, 255, 255));
+        loguin.setForeground(new java.awt.Color(255, 255, 255));
+        loguin.setOpaque(false);
 
         jLabel1.setText("Contraseña:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
-        ingreso.setBackground(new java.awt.Color(0, 0, 0));
+        ingreso.setBackground(new java.awt.Color(1, 58, 6));
         ingreso.setForeground(new java.awt.Color(255, 255, 255));
         ingreso.setText("Entrar");
         ingreso.addActionListener(new java.awt.event.ActionListener() {
@@ -63,45 +83,115 @@ public class Inicio extends javax.swing.JFrame {
                 ingresoActionPerformed(evt);
             }
         });
-        jPanel2.add(ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
 
         jLabel2.setText("Usuario:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        textPw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textPw.setMinimumSize(new java.awt.Dimension(64, 30));
+        textPw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                textPwActionPerformed(evt);
             }
         });
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
-        jScrollPane1.setViewportView(texUsuario);
+        texUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 170, -1));
+        textErrorLog.setForeground(new java.awt.Color(255, 255, 255));
+        textErrorLog.setText("Usuario No existe");
 
-        titulo2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        javax.swing.GroupLayout loguinLayout = new javax.swing.GroupLayout(loguin);
+        loguin.setLayout(loguinLayout);
+        loguinLayout.setHorizontalGroup(
+            loguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loguinLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(loguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textErrorLog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textPw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(texUsuario, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ingreso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, loguinLayout.createSequentialGroup()
+                        .addGroup(loguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(92, 92, 92))
+        );
+        loguinLayout.setVerticalGroup(
+            loguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loguinLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(texUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ingreso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textErrorLog)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        panelFondo.add(loguin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 340, 170));
+
+        panelEditFondo1.setBackground(new java.awt.Color(1, 58, 6));
+        panelEditFondo1.setForeground(new java.awt.Color(0, 0, 0));
+        panelEditFondo1.setLayout(null);
+
+        titulo.setOpaque(false);
+        titulo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titulo2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         titulo2.setForeground(new java.awt.Color(255, 255, 0));
         titulo2.setText("EnglishPoli");
-        jPanel2.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 180, 30));
+        titulo.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 14, 210, 60));
 
-        titulo1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titulo1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         titulo1.setForeground(new java.awt.Color(0, 204, 51));
         titulo1.setText("Interact");
-        jPanel2.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
+        titulo.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 14, -1, 60));
 
-        margen1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        jPanel2.add(margen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 310, 120));
+        panelEditFondo1.add(titulo);
+        titulo.setBounds(170, -20, 380, 80);
+
+        panelFondo.add(panelEditFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 60));
+
+        panelEditFondo2.setBackground(new java.awt.Color(25, 104, 68));
+        panelEditFondo2.setForeground(new java.awt.Color(0, 0, 0));
+        panelEditFondo2.setLayout(null);
+
+        contenedorEscudo.setOpaque(false);
+
+        javax.swing.GroupLayout contenedorEscudoLayout = new javax.swing.GroupLayout(contenedorEscudo);
+        contenedorEscudo.setLayout(contenedorEscudoLayout);
+        contenedorEscudoLayout.setHorizontalGroup(
+            contenedorEscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        contenedorEscudoLayout.setVerticalGroup(
+            contenedorEscudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        panelEditFondo2.add(contenedorEscudo);
+        contenedorEscudo.setBounds(0, 0, 190, 100);
+        panelEditFondo2.add(escudo);
+        escudo.setBounds(70, 100, 190, 100);
+
+        panelFondo.add(panelEditFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 280));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -109,16 +199,47 @@ public class Inicio extends javax.swing.JFrame {
 
     private void ingresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoActionPerformed
         // TODO add your handling code here:
-        VPrincipal principal = new VPrincipal();
-        principal.setLocationRelativeTo(null);
-        this.dispose();
-        principal.setVisible(true);
+        boolean acceso = false;
+        String mensaje = "Error datos"; 
+        Usuario usuarioUso = new Usuario();
+ 
+        //mensaje.setText("Usuario invalido");
+        //mensaje.setForeground(Color.red);
+        for(int i = 0; i < loguinlist.length; i++){
+            System.out.println("user vector: "+loguinlist[i].getUser());
+            System.out.println(texUsuario.getText());
+            if(loguinlist[i].getUser().equalsIgnoreCase(texUsuario.getText())){
+                
+                if(loguinlist[i].getPw().equals(new String(textPw.getPassword()))){
+                    System.out.print("pasa pw");
+                    acceso = true;
+                    usuarioUso = loguinlist[i];
+                }else{
+                    mensaje = "Clave invalida";
+                    //mensaje.setForeground(Color.red);
+                }
+            }else{
+                
+            }
+        }
+        if(acceso){
+            Agendas agendas = new Agendas(usuarioUso);
+            agendas.setLocationRelativeTo(null);
+            this.dispose();
+            agendas.setVisible(true);
+        }else{
+            textErrorLog.setText(mensaje);
+            textErrorLog.setForeground(Color.red);
+            textPw.setText("");
+        }
+      
+       
         
     }//GEN-LAST:event_ingresoActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void textPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPwActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_textPwActionPerformed
     
 //private void ajustarImag(JLabel labelEtiqueta, String rutaIm) {
 //    ImageIcon imagenOriginal = new ImageIcon(rutaIm);
@@ -182,22 +303,26 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                //new Inicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel escudo;
-    private javax.swing.JButton ingreso;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel margen1;
-    private javax.swing.JTextPane texUsuario;
-    private javax.swing.JLabel titulo1;
-    private javax.swing.JLabel titulo2;
+    javax.swing.JPanel contenedorEscudo;
+    javax.swing.JLabel escudo;
+    javax.swing.JButton ingreso;
+    javax.swing.JLabel jLabel1;
+    javax.swing.JLabel jLabel2;
+    javax.swing.JPanel loguin;
+    javax.swing.JPanel panelEditFondo1;
+    javax.swing.JPanel panelEditFondo2;
+    javax.swing.JPanel panelFondo;
+    javax.swing.JTextPane texUsuario;
+    javax.swing.JLabel textErrorLog;
+    javax.swing.JPasswordField textPw;
+    javax.swing.JPanel titulo;
+    javax.swing.JLabel titulo1;
+    javax.swing.JLabel titulo2;
     // End of variables declaration//GEN-END:variables
 }

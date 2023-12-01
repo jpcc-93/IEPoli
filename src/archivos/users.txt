@@ -1,0 +1,2 @@
+1020457000,Juan Pablo,Cardona,juan_cardona82641@elpoli.edu.co,3192878469,true,pablo,1234
+43815024,Claudia,Calderon,claudia_calderon102@elpoli.edu.co,3213208812,false,claudia,1234
